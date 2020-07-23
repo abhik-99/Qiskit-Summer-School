@@ -101,7 +101,7 @@ def check_answer(answer, lab_name, exercise_name, participant_name, participant_
             data['session'] = session
         answer_response = send_request(data, endpoint)
         is_update = answer_response.get('is_update', True)
-        session = answer_response.get('session')
+        session = answer_response['session']
         if answer_response['is_valid']:
             result_msg = '🎉 Correct'
         else:
